@@ -5,17 +5,32 @@
     */
     class IndexController extends baseController
     {
-        private $model;
+        private $action;
 
-        function __construct($model='')
+        public function __construct($action='')
         {
-            $this->model = $model;
+            $this->action = $action;
         }
 
         public function index()
         {
-            echo "hola";
-            $this->render();
+            $data = array();
+            $data['title'] = "Bookie";
+            $data['books'] = Book::all();
+            $data['shelves'] = Shelf::all();
+            /*foreach($books as $book) {
+                echo $book->title;
+                echo "<br>\n";
+                echo $book->description;
+                echo "<br>\n";
+                echo $book->cover;
+                echo "<br>\n";
+                foreach($book->shelves as $shelf) {
+                    echo $shelf->name. "|";
+                }
+                echo "<br>\n";
+            }*/
+            $this->render($data);
         }
 
         public function error($message) {

@@ -15,9 +15,10 @@ abstract class BaseController {
         return $this->{$this->action}();
     }
 
-    public function render($data=[]) {
+    public function render($data=[], $action='') {
         //establish the view object
-        $this->view = new View(get_class($this), $this->action);
+        $view = $data['view'] ? $data['view'] : get_class($this);
+        $this->view = new View($view, $action? $action: $this->action);
         $this->view->render($data);
     }
 

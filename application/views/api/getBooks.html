@@ -1,0 +1,71 @@
+<div class="section">
+            <div class="container">
+                <h1 class="text-center title" id="library">Library</h1>
+                <div class="separator"></div>
+                <br>
+                <div class="row " data-animation-effect="fadeIn">
+                    <div class="col-md-12">
+
+                        <!-- isotope filters start -->
+                        <div class="filters text-center">
+                            <ul class="nav nav-pills">
+                                <li class="active"><a href="#" data-filter="*">All Shelves</a></li>
+                                {% for shelf in shelves %}
+                                    <li><a href="#" data-filter=".{{ shelf.name | lower | replace({' ': '-'}) }}">{{shelf.name}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <!-- isotope filters end -->
+
+                        <!-- portfolio items start -->
+                        <div class="isotope-container row grid-space-20">
+
+                        {% for book in books %}
+                            <div class="col-sm-6 col-md-3 isotope-item {% for shelf in book.shelves %}{{ shelf.name | lower | replace({' ': '-'}) }} {% endfor %}">
+                                <div class="image-box">
+                                    <div class="overlay-container">
+                                        <img src="images/covers/{{book.cover}}" alt="" class="img-responsive">
+                                        <a class="overlay" data-toggle="modal" data-target="#project-1">
+                                            <i class="fa fa-search-plus"></i>
+                                            <span>{% for shelf in book.shelves %}{{ shelf.name | replace({' ': '-'}) }}{% endfor %}</span>
+                                        </a>
+                                    </div>
+                                    <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">{{ book.title }}</a>
+                                </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="project-1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                <h4 class="modal-title" id="project-1-label">{{ book.title }}</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h3>Book Description</h3>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <p>{{ book.description | nl2br }}</p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <img src="images/covers/{{book.cover}}" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal end -->
+                            </div>
+
+                        {% endfor %}
+
+                        </div>
+                        <!-- portfolio items end -->
+
+                    </div>
+                </div>
+            </div>
+        </div>

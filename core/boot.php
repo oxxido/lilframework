@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-session_start();
+
 
 //start composer autoloader
 require ROOT_PATH . "/vendor/autoload.php";
@@ -39,17 +39,3 @@ $data['base_url'] = base_url();
 //crypto key
 $cryptoKey = base64_decode("brimqiLHrYfj//MNlFKDxg==");
 
-
-/*//check default message
-if(get('msg')) {
-    switch(get('msg')) {
-        case "notLogged":
-            $data['message'] = "You must be logged to access the page.";
-        break;
-        default:
-            $data['message'] = get('msg');
-        break;
-    }
-}
-
-$data['messenger'] = messenger();*/

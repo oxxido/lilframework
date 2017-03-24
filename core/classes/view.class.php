@@ -12,7 +12,7 @@ class View {
     }
 
     public function render($data) {
-        echo "VF:".$this->viewFile;
+        //echo "VF:".$this->viewFile;
         try {
             $loader = new Twig_Loader_Filesystem(ROOT_PATH . '/application/views/');
             $twig = new Twig_Environment($loader, array(
@@ -25,7 +25,8 @@ class View {
                                     "js/datatables.js",
                                     "js/users.js");
             $data['addCss']  = array("bc/datatables.net-bs/css/dataTables.bootstrap.min.css");*/
-            echo $twig->render('index.html', $data);
+            //echo $twig->render('index.html', $data);
+            echo $twig->render($this->viewFile, $data);
 
         } catch(Exception $e) {
             echo $e->getMessage();

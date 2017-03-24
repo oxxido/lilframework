@@ -47,7 +47,7 @@ if (file_exists($ctrlPath))
     //$viewName       = ucfirst($requestedController).'View';
 
     //$controllerObj  = new $controllerName( new $modelName );
-    $controllerObj  = new $controllerName( $modelName );
+    $controllerObj  = new $controllerName( $requestedAction );
     //$viewObj        = new $viewName( $controllerObj, new $modelName );
 
 
