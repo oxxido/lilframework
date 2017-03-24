@@ -25,15 +25,15 @@
                                 <div class="image-box">
                                     <div class="overlay-container">
                                         <img src="images/covers/{{book.cover}}" alt="" class="img-responsive">
-                                        <a class="overlay" data-toggle="modal" data-target="#project-1">
+                                        <a class="overlay" data-toggle="modal" data-target="#book-{{ book.id }}">
                                             <i class="fa fa-search-plus"></i>
                                             <span>{% for shelf in book.shelves %}{{ shelf.name | replace({' ': '-'}) }}{% endfor %}</span>
                                         </a>
                                     </div>
-                                    <a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">{{ book.title }}</a>
+                                    <a class="btn btn-default btn-block" data-toggle="modal" data-target="#book-{{ book.id }}">{{ book.title }}</a>
                                 </div>
                                 <!-- Modal -->
-                                <div class="modal fade" id="project-1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+                                <div class="modal fade" id="book-{{ book.id }}" tabindex="-1" role="dialog" aria-labelledby="book-{{ book.id }}-label" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">

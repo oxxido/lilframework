@@ -2,12 +2,11 @@
 class config {
 
     private $config;
-    private $iniFile = "./config.ini";
+    private $iniFile = CONFIG_PATH . "/config.ini";
 
-    function _constructor() {
-
+    function __construct() {
         if(is_file($this->iniFile)) {
-            $ini = parse_ini_file("./config.ini", true);
+            $ini = parse_ini_file($this->iniFile, true);
             foreach($ini as $key => $param) {
                 $this->config[$key] = $param;
             }

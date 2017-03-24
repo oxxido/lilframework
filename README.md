@@ -9,6 +9,8 @@
 ###Typical Development
 * `composer install`
 * `bower install`
+* rename and modify core/config/config-sample.ini to config.ini
+* mysql -u somename -p dbname < migrate.sql
 * php -S localhost:8000
 
 

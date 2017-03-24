@@ -7,8 +7,8 @@ ini_set('display_startup_errors', 1);
 
 //start composer autoloader
 require ROOT_PATH . "/vendor/autoload.php";
-require_once ROOT_PATH . "/core/config/config.class.php";
-require_once ROOT_PATH . "/core/config/database.php";
+require_once CONFIG_PATH . "/config.class.php";
+require_once CONFIG_PATH . "/database.php";
 require_once ROOT_PATH . "/core/classes/baseController.class.php";
 require_once ROOT_PATH . "/core/classes/view.class.php";
 

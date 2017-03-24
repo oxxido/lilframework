@@ -1,6 +1,7 @@
 <?php
 //set project path
-define(ROOT_PATH, dirname(__DIR__) );
+define("ROOT_PATH", dirname(__DIR__) );
+define("CONFIG_PATH", ROOT_PATH . '/core/config' );
 
 // booting the framework
 require(ROOT_PATH."/core/boot.php");
