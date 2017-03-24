@@ -1,0 +1,23 @@
+{
+    "name": "oxxido/lilframework",
+    "description": "A small fast reliable micro framework",
+    "type": "project",
+    "license": "cc",
+    "authors": [
+        {
+            "name": "Gerardo",
+            "email": "oxxido@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "core/classes"
+        ]
+    },
+    "require": {
+	    "twig/twig": "^2.3",
+        "illuminate/database": "^5.2",
+        "doctrine/dbal": "^2.5"
+    }
+}
+
