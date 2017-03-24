@@ -14,7 +14,6 @@
 
         public function getBooks()
         {
-            sleep(2);
             $data = array();
             $data['title'] = "Bookie";
             $data['books'] = Book::all();

@@ -9,7 +9,7 @@
                         <!-- isotope filters start -->
                         <div class="filters text-center">
                             <ul class="nav nav-pills">
-                                <li class="active"><a href="#" data-filter="*">All Shelves</a></li>
+                                <li class="active"><a href="#" data-filter="*" id="allShelves">All Shelves</a></li>
                                 {% for shelf in shelves %}
                                     <li><a href="#" data-filter=".{{ shelf.name | lower | replace({' ': '-'}) }}">{{shelf.name}}</a></li>
                                 {% endfor %}
@@ -17,7 +17,7 @@
                         </div>
                         <!-- isotope filters end -->
 
-                        <!-- portfolio items start -->
+                        <!-- books items start -->
                         <div class="isotope-container row grid-space-20">
 
                         {% for book in books %}
@@ -63,7 +63,7 @@
                         {% endfor %}
 
                         </div>
-                        <!-- portfolio items end -->
+                        <!-- books end -->
 
                     </div>
                 </div>

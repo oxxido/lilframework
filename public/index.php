@@ -32,8 +32,6 @@ if ($url === '/') {
 }
 
 
-// Check if controller exists. NB:
-// You have to do that for the model and the view too
 $ctrlPath = ROOT_PATH.'/application/controllers/'.$requestedController.'Controller.php';
 
 
@@ -45,18 +43,13 @@ if (file_exists($ctrlPath))
 
     $modelName      = strtolower($requestedController).'Model';
     $controllerName = strtolower($requestedController).'Controller';
-    //$viewName       = ucfirst($requestedController).'View';
 
-    //$controllerObj  = new $controllerName( new $modelName );
     $controllerObj  = new $controllerName( $requestedAction );
-    //$viewObj        = new $viewName( $controllerObj, new $modelName );
 
 
     // If there is a method - Second parameter
     if ($requestedAction != '')
     {
-        // then we call the method via the view
-        // dynamic call of the view
         echo $controllerObj->$requestedAction($requestedParams);
 
     } else {
